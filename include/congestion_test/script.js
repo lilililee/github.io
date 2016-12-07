@@ -39,6 +39,10 @@ function figureResult(){
 
 	//点击开始按钮，开始计算
 	$('.b-out .start').click(function(){
+		//先隐藏结果显示
+		$('.b-out .lost').hide();
+		$('.b-out .test').hide();
+
 		var args = checkArgs();//获取参数
 		if(typeof args == 'undefined'){
 			return;
@@ -46,7 +50,9 @@ function figureResult(){
 		var buff = (args.buff*0.85)*8;	//将byte转为bit，并减去静态缓存
 		// var cur_buff = buff;		//记录当前可用buffer
 		// var discard = 0;				//丢包总数
-		var max_Ts = args.tw*args.tn/1000;		//总入口每ms最大转发能力，单位为 M/ms
+		var in_width = args.rw*args.rn;		//入口总带宽
+		var out_width = args.tw*args.tn;	//出口总带宽
+		var max_Ts = out_width/1000;		//总入口每ms最大转发能力，单位为 M/ms
 		var all_flow = args.rs*args.rn;			//1000ms内进入总流量
 		
 		//根据不稳定指数a计算出入口最快转发时间t(ms)，以及入口平均速率Rv(M/ms)，
@@ -66,43 +72,40 @@ function figureResult(){
 		//document.writeln((discard/all_flow).toFixed(2)+'%');
 		var result = figure(all_Rs);
 		//$('.b-out h2').html('测试结果');
-		$('.b-out .lost').html('丢包率：'+result);
-		$('.b-out .lost').show();
+		//$('.b-out .lost').html('丢包率：'+result+'%');
+		//$('.b-out .lost-result').fadeOut(0).html('丢包率：'+result+'%').fadeIn(1000);
+		$('.b-out .lost-result').html('丢包率：'+result+'%');
+		$('.b-out .lost').fadeIn(1000);
 
-	//开始模拟测试，不会根据不稳定指数计算
-		//先生成一组每ms的随机流量
-		var random_Rs = [];
-		var random_all = 0;
-		
-		//生成1000个0-1之间的随机数
-		for(t=0;t<1000;t++){
-			var ran = Math.random()*max_Ts;
-			random_Rs[t] = ran;
-			random_all += ran;
-		}
-		var dis = (random_all - all_flow)/10000;
-		var all=0;
-		for(var i=0;i<10000;i++){
-			var temp = Math.round(Math.random()*999.99);
-			//
-			if(random_Rs[temp]<dis){
-				i--;//console.log('sdsd'+temp);
+
+		setTimeout(function(){		
+			//根据计算结果，做出不同的评价
+			if(all_flow>out_width){
+				showAss('流量太大，加点带宽吧...');
+			}else if(in_width<=out_width){
+				showAss('绝对可行的方案，够稳！');
+			}else if(args.point == 0 && result > 0){
+				showAss('这这这...肯定不行！');
+			}else if(args.point == 0 && result == 0){
+				showAss('咱们应该继续测下~');
+			}else if(args.point == 100 && result > 0){
+				showAss('或许流量没这么不稳定？');
+			}else if(args.point == 100 && result == 0){
+				showAss('没毛病，放心用！zzz');
+			}else if(result >0){
+				showAss('千万别慌！下面有方案！');
 			}else{
-				random_Rs[temp]-=dis;
+				showAss('咦，这个可以哟~');
 			}
-		}
-		for(i=0;i<1000;i++){
-			all+=random_Rs[i];
-		}
-		//console.log(random_Rs[t]);
-		// console.log(random_Rs);
-		// console.log(random_all);
-		result = figure(random_Rs);
-		console.log(dis);
-		console.log(random_Rs);
-		console.log(all);
-		$('.b-out .test p').html('丢包率：'+result);
-		$('.b-out .test').show();
+
+			$('.b-out .test').fadeIn(1000);
+
+			function showAss(info){
+				$('.test-assessment').html(info);		
+			}
+			
+		},500);
+		
 
 		//获取每ms的速率后开始计算
 		function figure(all_Rs){
@@ -130,7 +133,7 @@ function figureResult(){
 				
 			}
 
-			return (discard/all_flow*100).toFixed(2)+'%';
+			return (discard/all_flow*100).toFixed(2);
 		}
 	});
 }

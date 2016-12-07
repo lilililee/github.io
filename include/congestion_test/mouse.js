@@ -147,7 +147,7 @@ random = function(){
 				this.pos = new Vector2(X||0, Y||0);
 				this.acc = new Vector2(0, 0);
 				this.speed = new Vector2(0, 0);
-				this.color = "#AFFED8";		//设置箭头颜色**********************
+				this.color = "#81FBC0";		//设置箭头颜色**********************
 				this.maxSpeed = opts.particle.maxSpeed + Math.random()*opts.particle.maxSpeed;
 			}; //alert(window.innerWidth);
 	
