@@ -131,7 +131,7 @@ random = function(){
 			opts = {
 				canvas: {
 					backgroundColor: "rgba(	253,253,253,0.2)",
-					amount: 5,	//设置箭头数目********************
+					amount: 3,	//设置箭头数目********************
 					displayStats: false,
 				},
 				particle: {
