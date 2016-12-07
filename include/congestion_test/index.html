@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>端口拥塞测试</title>
+	<link rel="icon" href="title.ico" type="image/x-ico" /> 
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_6wjg1pz1os8umcxr.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<canvas id="canvas"  width="1366" height="0"></canvas>
+<div id="a-head">
+	
+</div>
+
+<div id="a-figure">
+	<div class="b-wapper">
+		<h1>端口拥塞测试</h1>
+		<ul class="b-in">
+			<li>
+				<label for="Rs">入口速率：</label><input id="Rs" type="text" name="rs"> Mb/s<span> *请输入一个正数！</span>
+				<p>*每个入口平均流量</p>
+			</li>
+			<li>
+				<label for="Rw">入口带宽：</label><input id="Rw" type="text" name="rw"> Mb/s<span> *请输入正确的带宽，且大于入口速率！</span>
+				<p>*每个入口带宽（10/100/1000/10000）</p>
+			</li>
+			<li>
+				<label for="Rn">入口数目：</label><input id="Rn" type="text" name="rn"><span> *请输入一个正整数！</span>
+				<p>*所有入口个数之和</p>
+			</li>
+			<li>
+				<label for="Tw">出口带宽：</label><input id="Tw" type="text" name="tw"> Mb/s<span> *请输入正确的带宽！</span>
+				<p>*每个出口带宽（10/100/1000/10000）</p>
+			</li>
+			<li>
+				<label for="Tn">出口数目：</label><input id="Tn" type="text" name="tn"><span> *请输入一个正整数！</span>
+				<p>*所有出口个数之和</p>
+			</li>
+			<li>
+				<label for="Buff">缓<i class="zhanwei">占位</i>存：</label><input id="Buff" type="text" name="buff"> MB<span> *请输入一个非负数！</span>
+				<p>*交换机缓存大小</p>
+			</li>
+			<li>
+				<label for="Point">不稳定指数(0-100)：</label><input id="Point" type="text" name="point"><span> *请输入一个0-100之间的整数！</span>
+				<p>*在1s内流量的平稳情况，0表示流量绝对平稳，100反之</p>
+			</li>
+		</ul>
+		<div class="b-out">
+			<div class="result">
+				<h2>测试结果</h2>
+				<div class="lost">丢包率：56.33%</div>
+				<div class="test">
+					<h3>模拟测试</h3>
+					<p>丢包率：20.22%</p>
+				</div>
+			</div>
+			<div class="out-bnt reset"> 重置</div>
+			<div class="out-bnt start">开始</div>
+		</div>
+	</div>
+</div>
+
+<div id="a-content">
+	<div class="b-intro">
+		<h2><i class="iconfont icon-chanpinjieshao"></i>功能介绍</h2>
+		<p>该测试主要用来根据现场网络环境来进行丢包率估算，仅作参考!</p>
+	</div><hr>
+
+	<div class="b-scene">
+		<h2><i class="iconfont icon-changjing1"></i>应用场景</h2>
+		<h3><i class="iconfont icon-zhengque"></i>在产品选型时</h3>
+		<p>设置不稳定指数为0进行测试，表示假设现场流量绝对平稳，如果丢包率大于0，请调整方案。</p>
+		<p>设置不稳定指数为100进行测试，表示现场流量极度不平稳，如果丢包率为0，表示此方案绝对可行;当丢包率大于0时，也不代表此方案不能用在现场环境中，因为现场流量不可能是极端不平稳的情况。</p>
+		<h3><i class="iconfont icon-zhengque"></i>在现场环境发生拥塞时</h3>
+		<p>根据现场现象，输入对应的参数，然后调整不稳定指数计算出丢包率，当测试的丢包率符合现场的丢包率时，记录此时的不稳定指数，表示现场流量不稳定情况。然后输入解决方案的参数以及该不稳定指数，来验证该方案是否可以解决现场拥塞问题。</p>
+	</div><hr>
+
+	<div class="b-deal">
+		<h2><i class="iconfont icon-jiejuefangan"></i>解决方案</h2>
+		<p><strong>端口拥塞的本质：瞬时流量过大导致交换机无法及时转发。</strong></p>
+		<p><strong>解决方案可从两个方面入手：1，降低瞬时流量; 2，提高转发能力。</strong></p>
+		<h3><i class="iconfont icon-zhengque"></i>降低瞬时流量</h3>
+		<dl>
+			<dt><i class="iconfont icon-skip"></i>方案一：减少入口接入端口数目，降低进来的总流量。</dt>
+			<dd>*适当减少接入数目，比如20个接入改为15个。</dd>
+
+			<dt><i class="iconfont icon-skip"></i>方案二：流量进入的端口和对端同时开启流控。</dt>
+			<dd>*开启流控后可有效的缓解瞬时流量过高的问题，让流量平稳，交换机也就能时转发了，如果对端不支持流控，此方法无效。</dd>
+
+			<dt><i class="iconfont icon-skip"></i>方案三：减小流量入口的带宽。</dt>
+			<dd>*千兆接入可改为百兆接入，降低瞬时流量的峰值。</dd>
+		</dl>
+
+		<h3><i class="iconfont icon-zhengque"></i>提高转发能力</h3>
+		<dl>
+			<dt><i class="iconfont icon-skip"></i>方案一：增大出口带宽。</dt>
+			<dd>*可通过端口聚合或升级带宽来解决。</dd>
+
+			<dt><i class="iconfont icon-skip"></i>方案二：修改mmu值，提高端口缓存利用率。</dt>
+			<dd>*可在全局下配置mmu-dyn-alloc 70，在丢包可控范围内，有优化效果。</dd>
+
+			<dt><i class="iconfont icon-skip"></i>方案三：更换端口缓存更大的设备。</dt>
+			<dd>*端口缓存越大，对瞬时流量的调节效果越大，端口缓存一般为1-4MB，有可能出现较大的缓存也无法解决现场的拥塞问题，这时就要考虑其他方</dd><dd>案，不能盲目的依赖端口缓存。</dd>
+		</dl><hr>
+	</div><div class="b-source">
+		<h2><i class="iconfont icon-weibiaoti6"></i>资料下载</h2>
+		<p>下面是作者编写的端口拥塞介绍，包括基本概念和具体案例分析，请点击下面链接下载。</p>
+		<p><a href="https://pan.baidu.com/s/1o77VGHs" target="_blank"><i class="iconfont icon-link"></i> 端口拥塞详解</a></p>
+	</div>
+
+</div>
+
+<div id="a-foot">
+	
+</div>
+
+<div id="fixed-menu">
+	<ul id="fix-menu">
+		<li><i class="iconfont icon-cuowu" title="关闭特效"></i><i class="iconfont icon-zhengque" title="打开特效"></i></li>
+		<li><a href="http://www.bdcom.com.cn/" target="_blank"><i class="iconfont icon-lianjie" title="博达官网"></i></a></li>
+		<li><i class="iconfont icon-weichat" title="博达微信"></i></li>
+		<li class="to-top"><i class="iconfont icon-top" title="回到顶部"></i></li>
+		<!-- <li class="to-top"><a href="#" title="回到顶部"><i class="iconfont icon-top"></i></a></li>   a标签点击会触发淡入淡出事件-->
+		
+	</ul>
+	<div class="bdcom">
+		<h4>扫描二维码</h4>
+		<p>关注博达微信公众号</p>
+		<img src="bdcom.jpg">
+	</div>
+</div>
+ <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+ <script src="tx.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.1/dat.gui.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+ <script src="mouse.js"></script>
+ <script src="script.js"></script>
+
+	
+</script>
+
+</body>
+</html>

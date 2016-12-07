@@ -1,0 +1,318 @@
+/*设置默认样式*/
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 17px;
+	font-family: "宋体";
+}
+body{
+	/*background: #F5F0F0;*/
+}
+ul{
+	list-style-type: none;
+}
+a{
+	font-size: 14px;
+	color: #F90939;
+	text-decoration: none;
+}
+
+/*figure计算区域样式*/
+#a-figure{
+	width: 100%;
+	min-width: 1200px;
+	background: #42474B;
+	color: white;
+}
+
+#a-figure .b-wapper{
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	vertical-align: top;
+}
+
+#a-figure h1{
+	text-align: center;
+	font-size: 25px;
+	padding: 35px;
+
+}
+
+#a-figure .b-in{
+	display: inline-block;
+	width: 520px;
+	margin-left:40px;
+	margin-top: 10px;
+	
+}
+
+#a-figure .b-in li{
+	
+	height: 50px;
+	
+}
+
+#a-figure .b-in li p{
+	margin-top: 4px;
+	text-indent: 10px;
+	font-size: 12px;
+	visibility: hidden;
+}
+
+#a-figure .b-in input{
+	border-radius: 10px;
+	border: 2px solid #42474B;
+	outline: none;
+	color: #343434;
+	height: 22px;
+	/*text-indent: 8px;*/
+	text-align: center;
+	width: 170px;
+}
+#a-figure .b-in input:hover{
+	border: 2px solid #9FF4B4;
+}
+
+#a-figure .b-in input#Point{
+	width: 90px;
+}
+
+#a-figure .b-in span{
+	font-size: 12px;
+	color: #CB4747;
+	display: none;
+}
+
+#a-figure .b-in .zhanwei{
+	visibility: hidden;
+	
+}
+
+#a-figure .b-out{
+	display: inline-block;
+	width: 400px;
+	height: 350px;
+	vertical-align: top;
+	border: 1px solid white;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+
+#a-figure .b-out .result{
+	height: 235px;
+	border-bottom: 1px solid white;
+	text-align: center;
+}
+
+#a-figure .b-out .result h2{
+	
+	padding: 20px;
+}
+
+#a-figure .b-out .lost{
+	margin: 0 auto;
+	width: 300px;
+	height: 50px;
+	/*border: 1px solid red;*/
+	line-height: 50px;
+	border-radius: 15px;
+	background: white;
+	color: #444141;
+	font-size: 20px;
+	/*box-shadow: 0 0 10px red;*/
+	font-weight: bold;
+	display: none;
+
+}
+
+#a-figure .b-out .test{
+	margin: 0 auto;
+	width: 300px;
+	height: 80px;
+	/*border: 1px solid blue;*/
+	border-radius: 15px;
+	background: white;
+	color: #000;
+	font-size: 18px;
+	margin-top: 20px;
+	color: #444141;
+	display: none;
+
+}
+
+#a-figure .b-out .test h3{
+	padding: 14px;
+}
+
+
+#a-figure .b-out .out-bnt{	
+	width: 150px;
+	height: 40px;
+	margin: 10px auto;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	border: 1px solid transparent;
+	border-radius: 20px;
+	letter-spacing: 10px;
+	text-indent: 12px;
+	background: #674C93;
+	/*文字不可选择*/
+	-moz-user-select:none; /*火狐*/
+	-webkit-user-select:none; /*webkit浏览器*/
+	-ms-user-select:none; /*IE10*/
+	-khtml-user-select:none; /*早期浏览器*/
+	user-select:none;
+}
+
+#a-figure .b-out .out-bnt:hover{
+	background: #5C497C;
+	cursor: pointer;
+}
+
+
+
+/*内容区域样式*/
+#a-content{
+	width: 1000px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+#a-content h2{
+	font-size: 25px;
+	margin: 30px 0 20px 0;
+	/*color: #020202;*/
+	color: black;
+}
+#a-content h2 i{
+	font-size: 25px;
+	margin-right: 3px;
+}
+
+
+#a-content h3{
+	font-size: 20px;
+	text-indent: 45px;
+	color: #212020;
+	margin: 20px 0;
+}
+
+
+
+#a-content p,#a-content dd{
+	color: #535151;
+	text-indent: 2em;
+	margin: 10px;
+	line-height: 25px;
+}
+
+#a-content p strong{
+	color: #171717;
+}
+
+#a-content dt{
+	text-indent: 80px;
+	color: #171717;
+	font-weight: bold;
+}
+
+#a-content dd{
+	/*color: #2F2E2E;*/
+	text-indent: 85px;
+	font-size: 14px;
+}
+
+
+#a-content hr{
+	margin-top: 30px;
+
+}
+
+#a-foot{
+	width: 100%;
+	height: 20px;
+	min-width: 1200px;
+	background: #42474B;
+	color: white;
+	margin-top: 20px;
+}
+
+
+/*箭头动画区域*/
+#canvas{
+	position: absolute;
+	z-index: -1;
+	display: none;
+	
+}
+
+.statss,.dg{
+	display: none;
+}
+
+
+/*右侧固定菜单区域*/
+#fixed-menu ul{
+	list-style-type: none;
+	width: 45px;
+	
+	text-align: center;
+	position: fixed;
+	right: 20px;
+	top: 350px;
+	background: white;
+	box-shadow: 2px 2px 10px #CECBCB;
+	display: none;
+	padding:6px 0;
+}
+
+#fixed-menu li{
+	padding: 8px 0;
+	width: 30px;
+	margin: 0 auto;
+}
+
+#fixed-menu li+li{
+	border-top: 1px solid #E0DDDD;
+}
+
+#fixed-menu i{
+	font-size: 24px;
+	color: #929191;
+	cursor: pointer;
+}
+#fixed-menu i:hover{
+	color: #272727;
+}
+
+#fixed-menu i.icon-cuowu{
+	display: none;
+	position: absolute;
+	background: white;
+	
+}
+
+#fixed-menu .bdcom{
+
+	position: fixed;
+	right: 67px;
+	top: 363px;	
+	text-align: center;
+	color: #7E7C7C;
+	box-shadow: 0 0 5px #C0BEBE;
+	background: white;
+	display: none;
+}
+#fixed-menu .bdcom h4{
+	font-size: 14px;
+	margin: 8px 0;
+	font-weight: normal;
+}
+#fixed-menu .bdcom p{
+	font-size: 12px;
+	padding:0 15px;
+}
+
