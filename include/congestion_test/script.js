@@ -59,6 +59,9 @@ function figureResult(){
 		var min_t = 1000-10*args.point*(1-args.rs/args.rw);
 		var Rv =  all_flow/min_t;
 
+		//a = (1000-t)/(1000-rs/rw*1000) * 100
+		//t = rs*rn / r实际
+
 		//document.write(t+'____________________'+Rv);
 		var all_Rs = [];
 		for(var t=0;t<min_t;t++){
