@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>bubbling</title>
+	<style type="text/css">
+		#d1{
+			width: 500px;
+			height: 500px;
+			background-color: red;
+		}
+		#d2{
+			width: 300px;
+			height: 300px;
+			background-color: blue;
+		}
+		#d3{
+			width: 100px;
+			height: 100px;
+			background-color: black;
+			position: absolute;
+		}
+
+	</style>
+</head>
+<body>
+
+<div id="d1"> 
+	<div id="d2">
+		<div id="d3">
+		
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="scripts/myFunction.js"></script>
+<script type="text/javascript">
+	alert(!!(0b10100&16));
+	var d1 = document.getElementById('d1');
+	var d2 = document.getElementById('d2');
+	var d3 = document.getElementById('d3');
+
+	addEvent(window,'load',function(){
+		addEvent(d1,'mouseover',function(e){
+			if(checkHover(e,this)){
+				alert('你移入了 d1');
+			}
+			
+		});
+		addEvent(d2,'mouseover',function(e){
+			if(checkHover(e,this)){
+				alert('你移入了 d2');
+			}
+		});
+		addEvent(d3,'mouseover',function(e){
+			alert(e.relatedTarget);
+			if(checkHover(e,this)){
+				alert('你移入了 d3');
+			}
+		});
+		addEvent(d1,'mouseout',function(e){
+			if(checkHover(e,this)){
+				alert('你移出了 d1');
+			}
+		});
+		addEvent(d2,'mouseout',function(e){
+			if(checkHover(e,this)){
+				alert('你移出了 d2');
+			}
+		});
+		addEvent(d3,'mouseout',function(e){
+			if(checkHover(e,this)){
+				alert('你移出了 d3');
+			}
+		});
+	});
+
+	
+
+	//判断目标元素是否包含移入移出元素
+	function checkHover(e,target){
+	    if (getEvent(e).type=='mouseover')  {
+	        return !contains(target,getEvent(e).relatedTarget||getEvent(e).fromElement) && !((getEvent(e).relatedTarget||getEvent(e).fromElement)===target);
+	    } else if(getEvent(e).type=='mouseout'){
+	        return !contains(target,getEvent(e).relatedTarget||getEvent(e).toElement) && !((getEvent(e).relatedTarget||getEvent(e).toElement)===target);
+	    }else{
+	    	throw new Error('this function just applicable for mouseover and mouseout!');
+	    }
+
+	    function contains(parentNode, childNode) {
+	    	alert(parentNode.compareDocumentPosition(childNode)&16);  //返回二进制1010 即10
+	    	//alert(parentNode.compareDocumentPosition(childNode));  
+		    if (parentNode.contains) {
+		         return parentNode != childNode && parentNode.contains(childNode);
+		         //return parentNode.contains(childNode);
+		    } else {
+		        return !!(parentNode.compareDocumentPosition(childNode)&16);
+		        //return !!(parentNode.compareDocumentPosition(childNode)===20);
+		    }
+		}
+
+		function getEvent(e){
+		    return e||window.event;
+		}
+	}
+	//调用实例
+	// addEvent(element,'mouseover',function(e){
+	// 	if(checkHover(e,this)){
+	// 		//触发事件时执行的代码
+	// 	}
+	// });
+
+	
+</script>
+</body>
+</html>

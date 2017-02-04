@@ -1,0 +1,56 @@
+#footer{
+	width: 100%;
+	min-width: 1200px;
+	height: 220px;
+	background: white;	/*如果不支持gradient则使用背景图片，IE9不支持*/
+	background:-webkit-gradient(linear, left top, left bottom, from(#FEFCFC), to(#F5F1F1));
+	background:-moz-linear-gradient(top, #FEFCFC, #F5F1F1);
+	background:-ms-linear-gradient(top, #FEFCFC, #F5F1F1);
+	/*border: 1px solid red;*/
+}
+
+#footer .links{
+	width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #BFB5B5;
+}
+
+#footer .table1{
+	margin: 0 auto;	
+	border-spacing: 30px 30px;
+}
+
+
+#footer .table1 td i{
+	font-size: 35px;
+	color: #C9C6C6;
+}
+#footer .table1 td i:hover{
+	color: #A19D9D;
+}
+
+#footer .table1 td:first-child i{
+	font-size: 38px;
+}
+
+
+#footer .table2{
+	margin: 0 auto;
+	border-spacing: 30px 0px;
+}
+
+#footer .table2 a{
+	font-size: 14px;
+	color: #A8A2A2;
+}
+#footer .table2 a:hover{
+	color: #D13131;
+}
+
+#footer>p a{
+	display: inline-block;
+	margin: 20px 0 0 562px;
+	font-size: 12px;
+	color: #B1ABAB;
+}

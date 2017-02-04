@@ -1,0 +1,107 @@
+#practice{
+	width: 100%;
+	height: 260px;
+	margin-top: 40px;
+}
+
+#practice h2{
+	margin: 20px 0;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+#practice h2 a{
+	margin-left: 1080px;
+	font-size: 14px;
+	color: #4E4C4C;
+}
+
+#practice .list li{
+	display: inline-block;
+	width: 224px;
+	height: 175px;
+}
+
+#practice .list li+li{
+	margin-left: 14px;
+}
+
+
+#practice .list li img{
+	position: absolute;
+	width: 224px;
+	height: 124px;
+	z-index: -1;
+}
+
+#practice .list li a{
+	display: block;
+	height: 100%;	
+	box-shadow: 0 1px 8px #DEDCDC;
+}
+
+#practice .list li a:hover{
+	box-shadow: 0 1px 8px #ADABAB;
+}
+
+#practice .list .info{
+	height: 124px;
+	display: table-cell;
+	vertical-align: bottom;
+	overflow: hidden;
+}
+
+#practice .info .text{
+	width: 224px;
+	height: 65px;
+	margin-top: 20px;
+	transition: height 0.4s;
+	-webkit-transition:height 0.4s;
+	/*background: rgba(255,255,255,0.92);*/
+	background: white;	/*如果不支持gradient则使用背景图片，IE9不支持*/
+	background:-webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.93)), to(rgba(255,255,255,1)));
+	background:-moz-linear-gradient(top, rgba(255,255,255,0.93), rgba(255,255,255,1));
+	background:-ms-linear-gradient(top, rgba(255,255,255,0.93), rgba(255,255,255,1));
+}
+
+#practice .info .text:hover{
+	/*height: 116px;*/
+	height: 100px;
+}
+
+#practice .info .text h3{
+	width: 180px;
+	margin: 0 auto;
+	font-size: 14px;
+	font-weight: normal;
+	padding-top: 12px;
+	padding-bottom: 10px;
+	line-height: 20px;
+}
+#practice .info .text p{
+
+	width: 180px;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #A4A9AD;
+	line-height: 20px;
+	font-weight: normal;
+	
+}
+
+#practice .price{
+	line-height: 51px;
+}
+
+#practice .price strong{
+	font-size: 13px;
+	font-weight: normal;
+	color: red;
+	margin-left: 20px;
+}
+
+#practice .price span{
+	font-size: 12px;
+	color: #A4A9AD;
+	margin-left: 75px;
+}
