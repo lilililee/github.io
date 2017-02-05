@@ -1,0 +1,147 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset"; 
+@import "compass/css3"; 
+@import "base.scss";
+
+/* imooc css */
+
+body {
+	background: url(../../images/header/bk.jpg) no-repeat;
+}
+
+//$all_minwidth: 1000px;
+$all_width: 1200px;
+/* 1. header */
+$header_height: 76px;
+
+.header {
+	position: relative;		//为了下载app图片在窗口大小改变时不错位
+	width : 100%;
+	height : $header_height;
+	min-width: 1200px;
+	
+	.logo-img {
+		@include fLeft;
+	}
+
+	li {
+		@include fLeft;
+		height: $header_height;		
+		line-height: $header_height;
+		margin-left: 30px;
+	}
+
+	.top-nav {
+		@include fLeft;
+		
+	}
+
+	.top-options {
+		@include fRight;
+		margin-right: 60px;
+		
+		input {
+			border: none;
+			outline: none;		//去除选中时边框
+			border-bottom: 1px solid gray;
+			//color: #817C7C;
+			background: none;	//去除默认背景
+			font-size: 16px;
+			font-family:  "微软雅黑";
+		}
+
+		i{
+			color: gray;
+			font-size: 20px;
+			&:hover {
+				color: red;
+			}
+		}
+
+		
+
+
+	}
+
+	a:hover {
+		color: red;
+	}
+	.top-app {
+		display: none;
+		position: absolute;
+		top: $header_height;
+		right: 85px;
+		width: 170px;
+		text-align: center;
+		background: white;	
+		line-height: 35px;
+		h3 {
+			height: 30px;
+			font-weight: normal;	//解决IE下显示粗体
+		}
+		p {
+			height: 35px;
+			font-size: 14px;
+			color: gray;
+		}
+	}
+}
+
+.nav {
+	width: $all_width;
+	margin: 0 auto;
+
+	.nav-background{
+		position:absolute;
+		z-index: -1000;
+	}
+	
+	.left-nav {
+		height: 454px;
+		width: 225px;
+		text-indent: 30px;
+		padding-top: 6px;
+		background:rgba(0,0,0,0.3);
+		-pie-background:rgba(0,0,0,0.3);/*IE6-8*/ 
+		//user-select: none;
+		@include user-select(none);
+		behavior:url(style-compass/sass/PIE.htc);	//ie是基于html文件为根路径查找文件
+		
+		li {
+			height: 63px;
+			//width: 225px;
+			//@include border;
+			line-height: 63px;
+			//*line-height:58px;
+
+			a{
+				color: white;
+				display: block;
+				height: 63px;
+			}
+
+			&:hover {
+				background:rgba(0,0,0,0.5);
+				-pie-background:rgba(0,0,0,0.5);/*IE6-8*/   //hover下无效。。。
+				behavior:url(style-compass/sass/PIE.htc);
+			}
+
+			i {
+				float: right;
+				margin-right: 30px;
+				color: #919090;
+			}
+		}
+
+		hr {
+			width:80%;
+			border: none;
+			border-top: 1px solid #666666;
+			margin: 0 auto;
+		}
+	}
+}
