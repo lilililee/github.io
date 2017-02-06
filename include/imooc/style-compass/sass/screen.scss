@@ -91,37 +91,40 @@ $header_height: 76px;
 	}
 }
 
+$nav_height: 460px;
 .nav {
 	width: $all_width;
 	margin: 0 auto;
+	position: relative;
 
 	.nav-background{
 		position:absolute;
 		z-index: -1000;
+		cursor: pointer;
 	}
 	
 	.left-nav {
+		float: left;
 		height: 454px;
-		width: 225px;
+		width: 225px; 
 		text-indent: 30px;
 		padding-top: 6px;
 		background:rgba(0,0,0,0.3);
 		-pie-background:rgba(0,0,0,0.3);/*IE6-8*/ 
-		//user-select: none;
-		@include user-select(none);
 		behavior:url(style-compass/sass/PIE.htc);	//ie是基于html文件为根路径查找文件
+		@include user-select(none);
 		
 		li {
-			height: 63px;
+			height: 63px; background-image:url(about:blank);
 			//width: 225px;
 			//@include border;
 			line-height: 63px;
 			//*line-height:58px;
-
 			a{
 				color: white;
 				display: block;
 				height: 63px;
+				
 			}
 
 			&:hover {
@@ -143,5 +146,73 @@ $header_height: 76px;
 			border-top: 1px solid #666666;
 			margin: 0 auto;
 		}
+	}
+	
+	.left-nav-wrap{			/* 为了方便js判断left-nav-menu是否隐藏 */
+		height: $nav_height;
+		width: 957px;
+		z-index: -500;
+	}
+	.left-nav-menu {
+		position: absolute;
+		left: 225px;
+		display: none;
+		@include fLeft;
+		height: $nav_height - 2;
+		width: 732px;
+		
+		border: {
+			top: 1px solid #DCD8D8;
+			bottom: 1px solid #DCD8D8;
+			right: 1px solid #E4DDDD;
+		}
+
+		h3 {
+			font-weight: bold;
+			margin: 35px 0 10px 35px;
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 35px;
+			text-indent: 35px;
+		}
+
+		strong {
+			color: #495056;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: red;
+		}
+	}
+
+	.toggle-left, .toggle-right{	
+		position: absolute;
+		top: $nav_height / 2 - 40;
+		text-align: center;
+		width: 40px;
+		height: 80px;
+		background:rgba(0,0,0,0.3);
+		-pie-background:rgba(0,0,0,0.3);/*IE6-8*/ 
+		behavior:url(style-compass/sass/PIE.htc);	//ie是基于html文件为根路径查找文件
+		// cursor: pointer;
+		
+	}
+	.toggle-left i, .toggle-right i{
+		line-height: 80px;
+		color: #EDEAEA;
+	}
+	.toggle-left {
+		left: 250px;	
+		z-index: -1;
+		i {
+			font-size: 18px;
+		}
+	}
+
+	.toggle-right {
+		left: 1135px;
 	}
 }

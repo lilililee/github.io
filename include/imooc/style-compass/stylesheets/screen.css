@@ -172,18 +172,21 @@ body {
   color: gray;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .nav {
   width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
-/* line 98, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .nav .nav-background {
   position: absolute;
   z-index: -1000;
+  cursor: pointer;
 }
-/* line 103, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .nav .left-nav {
+  float: left;
   height: 454px;
   width: 225px;
   text-indent: 30px;
@@ -191,40 +194,110 @@ body {
   background: rgba(0, 0, 0, 0.3);
   -pie-background: rgba(0, 0, 0, 0.3);
   /*IE6-8*/
+  behavior: url(style-compass/sass/PIE.htc);
   -moz-user-select: -moz-none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  behavior: url(style-compass/sass/PIE.htc);
 }
-/* line 114, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 .nav .left-nav li {
   height: 63px;
+  background-image: url(about:blank);
   line-height: 63px;
 }
-/* line 121, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .nav .left-nav li a {
   color: white;
   display: block;
   height: 63px;
 }
-/* line 127, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .nav .left-nav li:hover {
   background: rgba(0, 0, 0, 0.5);
   -pie-background: rgba(0, 0, 0, 0.5);
   /*IE6-8*/
   behavior: url(style-compass/sass/PIE.htc);
 }
-/* line 133, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .nav .left-nav li i {
   float: right;
   margin-right: 30px;
   color: #919090;
 }
-/* line 140, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .nav .left-nav hr {
   width: 80%;
   border: none;
   border-top: 1px solid #666666;
   margin: 0 auto;
+}
+/* line 151, ../sass/screen.scss */
+.nav .left-nav-wrap {
+  /* 为了方便js判断left-nav-menu是否隐藏 */
+  height: 460px;
+  width: 957px;
+  z-index: -500;
+}
+/* line 156, ../sass/screen.scss */
+.nav .left-nav-menu {
+  position: absolute;
+  left: 225px;
+  display: none;
+  float: left;
+  height: 458px;
+  width: 732px;
+  border-top: 1px solid #DCD8D8;
+  border-bottom: 1px solid #DCD8D8;
+  border-right: 1px solid #E4DDDD;
+}
+/* line 170, ../sass/screen.scss */
+.nav .left-nav-menu h3 {
+  font-weight: bold;
+  margin: 35px 0 10px 35px;
+}
+/* line 175, ../sass/screen.scss */
+.nav .left-nav-menu p {
+  font-size: 14px;
+  line-height: 35px;
+  text-indent: 35px;
+}
+/* line 181, ../sass/screen.scss */
+.nav .left-nav-menu strong {
+  color: #495056;
+  font-weight: bold;
+}
+/* line 186, ../sass/screen.scss */
+.nav .left-nav-menu a:hover {
+  color: red;
+}
+/* line 191, ../sass/screen.scss */
+.nav .toggle-left, .nav .toggle-right {
+  position: absolute;
+  top: 190px;
+  text-align: center;
+  width: 40px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  -pie-background: rgba(0, 0, 0, 0.3);
+  /*IE6-8*/
+  behavior: url(style-compass/sass/PIE.htc);
+}
+/* line 203, ../sass/screen.scss */
+.nav .toggle-left i, .nav .toggle-right i {
+  line-height: 80px;
+  color: #EDEAEA;
+}
+/* line 207, ../sass/screen.scss */
+.nav .toggle-left {
+  left: 250px;
+  z-index: -1;
+}
+/* line 210, ../sass/screen.scss */
+.nav .toggle-left i {
+  font-size: 18px;
+}
+/* line 215, ../sass/screen.scss */
+.nav .toggle-right {
+  left: 1135px;
 }
