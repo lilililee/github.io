@@ -31,32 +31,166 @@
 				</div>
 			</li>
 			<li><a href="#"><i class="iconfont">&#xe626;</i></a></li>
-			<li><a href="#"><i class="iconfont">&#xe691;</i></a></li>
+			<li><a href="#"><i class="iconfont">&#xe617;</i></a></li>
 		</ul>
 	</div>
 	
 	<!-- 2. 导航 -->
 	<div class="nav">
-		<img class="nav-background" src="images/nav/background1.jpg" alt="">
-		<img class="nav-background" src="images/nav/background2.jpg" alt="">
-		<img class="nav-background" src="images/nav/background3.jpg" alt="">
-		<img class="nav-background" src="images/nav/background4.jpg" alt="">
-		<img class="nav-background" src="images/nav/background5.jpg" alt="">
+		<!-- 2.1 导航整体背景 -->
+	<!-- 	<a href=""><img class="nav-background" src="images/nav/background1.jpg" alt=""></a>
+		<a href=""><img class="nav-background" src="images/nav/background2.jpg" alt=""></a>
+		<a href=""><img class="nav-background" src="images/nav/background3.jpg" alt=""></a>
+		<a href=""><img class="nav-background" src="images/nav/background4.jpg" alt=""></a>
+		<a href=""><img class="nav-background" src="images/nav/background5.jpg" alt=""></a> -->
+		
+		<a href="#" class="nav-background" style="background: url(images/nav/background1.jpg); display: block;"></a>
+		<a href="#" class="nav-background" style="background: url(images/nav/background2.jpg);"></a>
+		<a href="#" class="nav-background" style="background: url(images/nav/background3.jpg);"></a>
+		<a href="#" class="nav-background" style="background: url(images/nav/background4.jpg);"></a>
+		<a href="#" class="nav-background" style="background: url(images/nav/background5.jpg);"></a>
+		
+		<!-- 2.2 左侧导航及目录 -->
 
-		<ul class="left-nav">
-			<li><a href="#">前端开发<i class="iconfont">&#xe63b;</i></a></li><hr>
-			<li><a href="#">后端开发<i class="iconfont">&#xe63b;</i></a></li><hr>
-			<li><a href="#">移动开发<i class="iconfont">&#xe63b;</i></a></li><hr>
-			<li><a href="#">数据库<i class="iconfont">&#xe63b;</i></a></li><hr>
-			<li><a href="#">云计算&amp;大数据<i class="iconfont">&#xe63b;</i></a></li><hr>
-			<li><a href="#">运维&amp;测试<i class="iconfont">&#xe63b;</i></a></li><hr>
-			<li><a href="#">视觉设计<i class="iconfont">&#xe63b;</i></a></li>
-		</ul>
+		<div class="left-nav-wrap">		
+			<!-- <div class="toggle-left"><a href="#"><i class="iconfont">&#xe65d;</i></a></div> -->
+			<!-- <i class="iconfont toggle-left">&#xe65d;</i> -->
+			<ul class="left-nav">
+				<li><a href="#">前端开发<i class="iconfont">&#xe63b;</i></a></li><hr>
+				<li><a href="#">后端开发<i class="iconfont">&#xe63b;</i></a></li><hr>
+				<li><a href="#">移动开发<i class="iconfont">&#xe63b;</i></a></li><hr>
+				<li><a href="#">数据库<i class="iconfont">&#xe63b;</i></a></li><hr>
+				<li><a href="#">云计算&amp;大数据<i class="iconfont">&#xe63b;</i></a></li><hr>
+				<li><a href="#">运维&amp;测试<i class="iconfont">&#xe63b;</i></a></li><hr>
+				<li><a href="#">视觉设计<i class="iconfont">&#xe63b;</i></a></li>
+			</ul>
+			<div class="left-nav-menu front" style="background: url(images/nav/front.png);">
+				<h3>分类目录</h3>
+				<p>
+					<strong>基础：</strong>
+					<a href="#"> HTML/CSS </a> / 
+					<a href="#"> JavaScript </a> / 
+					<a href="#"> jQuery </a> 
+				</p>
+				<p>
+					<strong>进阶：</strong>
+					<a href="#">HTML5</a> / 
+					<a href="#">CSS3</a> / 
+					<a href="#">Node.js</a> / 
+					<a href="#">AngularJS</a> / 
+					<a href="#">Bootstrap</a> / 
+					<a href="#">React</a> / 
+					<a href="#">Sass/Less</a> / 
+					<a href="#">Vue.js</a> / 
+					<a href="#">WebApp</a>
+				</p>
+				<p>
+					<strong>其他：</strong>
+					<a href="#">前端工具</a>			
+				</p>
+				<h3>推荐</h3>
+				<p><a href="#">课程 | jQuery源码解析(DOM与核心模块)</a></p>
+				<p><a href="#">课程 | React事件图片画廊应用(下)</a></p>
+				<p><a href="#">课程 | React实战--打造画廊应用(上)</a></p>
+			</div>			
+			<div class="left-nav-menu back" style="background: url(images/nav/back.png);">
+				<h3>分类目录</h3>
+				<p>
+					<a href="#">PHP</a> / 
+					<a href="#">Java</a> / 
+					<a href="#"> Python </a> /
+					<a href="#"> C </a> /
+					<a href="#"> C++ </a> /
+					<a href="#"> Go </a> /
+					<a href="#"> C# </a> 
+				</p>
+				
+				<h3>推荐</h3>
+				<p><a href="#">课程 | 初始机器学习-理论篇</a></p>
+				<p><a href="#">课程 | C++远征之起航篇</a></p>
+				<p><a href="#">课程 | Java入门第二季</a></p>
+			</div>
+			<div class="left-nav-menu mobile" style="background: url(images/nav/mobile.png);">
+				<h3>分类目录</h3>
+				<p>
+					<a href="#"> Android </a> / 
+					<a href="#"> iOS </a> / 
+					<a href="#"> Unity 3D </a> /
+					<a href="#"> Cocos2d-x </a> 
+				</p>
+				<h3>推荐</h3>
+				<p><a href="#">课程 | Android面试解密-自定义</a></p>
+				<p><a href="#">课程 | Android智能机器人"小慕"的实现</a></p>
+				<p><a href="#">课程 | Android图案解锁</a></p>
+			</div>			
+			<div class="left-nav-menu data" style="background: url(images/nav/data.png);">
+				<h3>分类目录</h3>
+				<p>
+					<a href="#"> MySQL </a> / 
+					<a href="#"> MongoDB </a> / 
+					<a href="#"> Oracle </a> /
+					<a href="#"> SQL Server </a> 
+				</p>
+				
+				<h3>推荐</h3>
+				<p><a href="#">课程 | MongoDB 在线讲座之如何测试、调整及监控MongoDB性能</a></p>
+				<p><a href="#">课程 | MongoDB复制集—复制集的同步机制</a></p>
+				<p><a href="#">课程 | React实战--打造画廊应用(上)</a></p>
+			</div>
+			<div class="left-nav-menu cloud" style="background: url(images/nav/cloud.png);">
+				<h3>分类目录</h3>
+				<p>
+					<a href="#"> 大数据 </a> /  
+					<a href="#"> 云计算 </a> 
+				</p>
+				<h3>推荐</h3>
+				<p><a href="#">课程 | 阿里云助理弹性伸缩服务</a></p>
+				<p><a href="#">课程 | R语言入门</a></p>
+				<p><a href="#">课程 | R语言基础</a></p>
+			</div> 
+			<div class="left-nav-menu opeartion" style="background: url(images/nav/opeartion.png);">
+				<h3>分类目录</h3>
+				<p>
+					<a href="#"> 测试 </a> / 
+					<a href="#"> Linux </a> 
+				</p>
+				<h3>推荐</h3>
+				<p><a href="#">课程 | Linux中的计划任务-Crontab</a></p>
+				<p><a href="#">课程 | Linux服务管理</a></p>
+				<p><a href="#">课程 | shell编程之运算符</a></p>
+			</div>
+			<div class="left-nav-menu vision" style="background: url(images/nav/vision.png);">
+				<h3>分类目录</h3>
+				<p>
+					<a href="#"> Photoshop </a> / 
+					<a href="#"> Maya </a> /
+					<a href="#"> Premiere </a> / 
+					<a href="#"> ZBrush </a> /
+				</p>
+				<h3>推荐</h3>
+				<p><a href="#">课程 | Premiere--图片变电影</a></p>
+				<p><a href="#">课程 | May3D建模攻略--葵花宝典</a></p>
+				<p><a href="#">课程 | 拍摄与剪辑"怀孕日记"</a></p>
+			</div>
+		</div>
+
+		<!-- 2.3 左右箭头切换背景 -->
+		<i class="iconfont toggle-left">&#xe65d;</i>
+		<i class="iconfont toggle-right">&#xe61f;</i>
+
+		<!-- 2.4 右下圆点切换背景 -->
+		<div class="toggle-btn">
+			<span class="btn-active"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	</div>
 
 	<!-- 3. 课程推荐 -->
 	<div class="courses">
-		
+		sss
 	</div>
 
 	<!-- 4. 职业路径 -->

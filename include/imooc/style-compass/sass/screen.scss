@@ -79,6 +79,7 @@ $header_height: 76px;
 		text-align: center;
 		background: white;	
 		line-height: 35px;
+		z-index: 1000;
 		h3 {
 			height: 30px;
 			font-weight: normal;	//解决IE下显示粗体
@@ -94,15 +95,28 @@ $header_height: 76px;
 $nav_height: 460px;
 .nav {
 	width: $all_width;
+	height: $nav_height;
 	margin: 0 auto;
 	position: relative;
 
 	.nav-background{
 		position:absolute;
-		z-index: -1000;
-		cursor: pointer;
+		z-index: 0;
+		display: none;
+		height: $nav_height;
+		width: $all_width;
+		// cursor: pointer;
 	}
-	
+
+	.left-nav-wrap{			/* 为了方便js判断left-nav-menu是否隐藏 */
+		position: absolute;
+		// display: inline-block;
+		height: $nav_height;
+		// width: 957px;
+		z-index: 1;
+		// @include fLeft;
+	}
+
 	.left-nav {
 		float: left;
 		height: 454px;
@@ -129,8 +143,8 @@ $nav_height: 460px;
 
 			&:hover {
 				background:rgba(0,0,0,0.5);
-				-pie-background:rgba(0,0,0,0.5);/*IE6-8*/   //hover下无效。。。
-				behavior:url(style-compass/sass/PIE.htc);
+				// -pie-background:rgba(0,0,0,0.5);/*IE6-8*/   //hover下无效。。。
+				// behavior:url(style-compass/sass/PIE.htc);
 			}
 
 			i {
@@ -148,11 +162,6 @@ $nav_height: 460px;
 		}
 	}
 	
-	.left-nav-wrap{			/* 为了方便js判断left-nav-menu是否隐藏 */
-		height: $nav_height;
-		width: 957px;
-		z-index: -500;
-	}
 	.left-nav-menu {
 		position: absolute;
 		left: 225px;
@@ -194,25 +203,49 @@ $nav_height: 460px;
 		text-align: center;
 		width: 40px;
 		height: 80px;
-		background:rgba(0,0,0,0.3);
-		-pie-background:rgba(0,0,0,0.3);/*IE6-8*/ 
-		behavior:url(style-compass/sass/PIE.htc);	//ie是基于html文件为根路径查找文件
-		// cursor: pointer;
+		// background:rgba(0,0,0,0.3);
 		
-	}
-	.toggle-left i, .toggle-right i{
 		line-height: 80px;
 		color: #EDEAEA;
+		cursor: pointer;
+		@include user-select(none);
+
+		font-size: 24px;
+		&:hover{
+			background:rgba(0,0,0,0.3);
+		}
+		
 	}
 	.toggle-left {
 		left: 250px;	
-		z-index: -1;
-		i {
-			font-size: 18px;
-		}
+		font-size: 25px;
 	}
-
 	.toggle-right {
 		left: 1135px;
+	}
+
+	.toggle-btn {
+		position: absolute;
+		left: 1020px;
+		top: 410px;
+		z-index: 1000\0;		//兼容ie8显示
+
+		span {
+			display: inline-block;
+			float: left;
+			width: 8px;
+			height: 8px;
+			margin-left: 8px;
+			border: 2px solid #bbbdc0;
+			border-radius: 6px;
+			background-color: rgba(7,17,27,0.4);
+			// background-color: #A59EA9;
+			behavior:url(style-compass/sass/PIE.htc);	//ie是基于html文件为根路径查找文件
+			cursor: pointer;
+		}
+
+		.btn-active {
+			background-color: #fff;
+		}
 	}
 }
