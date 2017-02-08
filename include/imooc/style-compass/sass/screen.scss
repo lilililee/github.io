@@ -17,7 +17,6 @@ body {
 $all_width: 1200px;
 /* 1. header */
 $header_height: 76px;
-
 .header {
 	position: relative;		//为了下载app图片在窗口大小改变时不错位
 	width : 100%;
@@ -92,6 +91,7 @@ $header_height: 76px;
 	}
 }
 
+/* 2. nav */
 $nav_height: 460px;
 .nav {
 	width: $all_width;
@@ -231,7 +231,7 @@ $nav_height: 460px;
 		z-index: 1000\0;		//兼容ie8显示
 
 		span {
-			display: inline-block;
+			@include inline_block;
 			float: left;
 			width: 8px;
 			height: 8px;
@@ -247,5 +247,88 @@ $nav_height: 460px;
 		.btn-active {
 			background-color: #fff;
 		}
+	}
+}
+
+/* 3. courses */
+$font_color:#93999f;
+.courses {
+	position: relative;
+	width: $all_width;
+	margin: 0 auto;
+	color: #07111b;
+
+
+	.title {
+		@include border;
+		margin: 40px 0 20px 0;
+		h2 {
+			@include inline_block;
+			
+			// *font-weight: normal;
+		}
+
+		a{
+			margin-left: $all_width - 110;
+			color: #3A3939;
+			font-size: 14px;
+			&:hover{
+				color: $font_color;
+			}
+		}	
+	}
+
+	img {
+		height: 124px;
+		width: 100%;
+	}
+	li {
+		position: relative;
+		@include inline_block;
+		width: 224px;
+		height: 173px;
+		margin-left: 14px;
+		font-size: 14px;
+		// @include border;
+	}
+	li:first-child {
+		margin-left: 0;
+	}
+
+	.info {
+		position: absolute;
+		vertical-align: bottom;
+		width: 224px;
+		bottom: 0;
+		@include border;
+
+		h3 {
+			line-height: 21px;
+			padding: 16px;
+		}
+
+		p{
+			font-size: 12px;
+			padding: 0 16px;
+			color: $font_color;
+			line-height: 21px;
+		}
+
+		.price {
+			color: red;
+			font-size: 12px;
+			padding-left: 16px;
+			line-height: 30px;
+		}
+		
+		.count{
+			font-size: 12px;
+			// padding: 0 16px;
+			float: right;
+			padding-right: 20px;
+			color: $font_color;
+			line-height: 30px;
+		}
+
 	}
 }

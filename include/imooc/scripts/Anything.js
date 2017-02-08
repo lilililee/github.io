@@ -11,7 +11,7 @@ function Anything(args) {
 	//1. 参数为字符串时
 	if(typeof args == 'string'){
 		//1.1 优先使用querySelectorAll方法
-		if (document.querySelectorAll  === 'dddddddddddddddddddddd') {	//IE8+
+		if (document.querySelectorAll) {	//IE8+
 			$.pushElementsToAnything(this, document.querySelectorAll(args));//this = document.querySelectorAll(args);
 		}
 		//1.2 使用自写的选择符匹配，兼容IE6，7
@@ -2657,7 +2657,6 @@ $.getIndexOf = function(elem, arr){
 	if( typeof arr.indexOf == 'function'){
 		return arr.indexOf(elem);
 	}
-
 	//兼容IE8-，循环遍历
 	var i,
 		len = arr.length,
@@ -2669,7 +2668,6 @@ $.getIndexOf = function(elem, arr){
 			break;
 		}
 	}
-	
 	return result;
 }
 

@@ -11,7 +11,11 @@
 	border: $width solid $color;
 }
 
-
+// @mixin inline_block(){
+// 	display: inline-block;
+// 	*display: inline;
+// 	*zoom: 1;
+// }
 /* iconfont css */
 // @font-face {
 //   font-family: 'iconfont';  /* project id 227367 */

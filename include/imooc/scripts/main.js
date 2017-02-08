@@ -39,34 +39,41 @@ $(function(){
 		toggle_btns = $('.toggle-btn span');	//获取左下所有圆点按钮
 	//左箭头切换
 	$('.toggle-left').click(function(){
-		last_bac_index = cur_bac_index;
-		cur_bac_index = cur_bac_index === 0? nav_bacs_length-1 : cur_bac_index-1;
-		toggleNavBac(cur_bac_index, last_bac_index);
+		toggleNavBac(cur_bac_index === 0? nav_bacs_length-1 : cur_bac_index-1);
 	});
 	//右箭头切换
 	$('.toggle-right').click(function(){
-		last_bac_index = cur_bac_index;
-		cur_bac_index = cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1;
-		toggleNavBac(cur_bac_index, last_bac_index);
+		toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
 	});
 	//右下按钮切换
 	toggle_btns.click(function(){
-		last_bac_index = cur_bac_index;
-		
-		cur_bac_index = $.getIndexOf(this,toggle_btns); 
-		console.log(cur_bac_index)
-		
-		toggleNavBac(cur_bac_index, last_bac_index);
+	
+		toggleNavBac($.getIndexOf(this,toggle_btns));
 	})
 
-	//切换背景，参数为背景下标
-	function toggleNavBac(in_index, out_index){
+	//定时切换背景
+	var toggle_intervar = setInterval(function(){
+			toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
+		},3000);
+
+	$('.nav').mouseenter(function(){
+		clearInterval(toggle_intervar);
+	}).mouseleave(function(){
+		toggle_intervar = setInterval(function(){
+			toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
+		},3000);
+	})
+
+	//切换背景，参数为下一背景下标
+	function toggleNavBac(next_index){
+		last_bac_index = cur_bac_index;			
+		cur_bac_index = next_index; 
 		//改变左下圆点按钮样式
-		toggle_btns[in_index].className = 'btn-active';
-		toggle_btns[out_index].className = '';
+		toggle_btns[cur_bac_index].className = 'btn-active';
+		toggle_btns[last_bac_index].className = '';
 		//淡入淡出背景
-		$(nav_bacs[in_index]).fadeIn(500);
-		$(nav_bacs[out_index]).fadeOut(500);
+		$(nav_bacs[cur_bac_index]).fadeIn(500);
+		$(nav_bacs[last_bac_index]).fadeOut(500);
 	}
 	
 })
