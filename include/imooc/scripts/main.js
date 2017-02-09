@@ -45,13 +45,13 @@ $(function(){
 	$('.toggle-right').click(function(){
 		toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
 	});
-	//右下按钮切换
+	//2.3 右下按钮切换nav背景
 	toggle_btns.click(function(){
 	
 		toggleNavBac($.getIndexOf(this,toggle_btns));
-	})
+	});
 
-	//定时切换背景
+	//2.4 定时切换背景
 	var toggle_intervar = setInterval(function(){
 			toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
 		},3000);
@@ -62,7 +62,7 @@ $(function(){
 		toggle_intervar = setInterval(function(){
 			toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
 		},3000);
-	})
+	});
 
 	//切换背景，参数为下一背景下标
 	function toggleNavBac(next_index){
