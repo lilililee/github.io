@@ -75,5 +75,11 @@ $(function(){
 		$(nav_bacs[cur_bac_index]).fadeIn(500);
 		$(nav_bacs[last_bac_index]).fadeOut(500);
 	}
-	
+	/* 3. courses */
+	//3.1 鼠标进入某一课程显示更多信息
+	$('.courses-list li').mouseenter(function(){
+		$(this).find('.info').stop().animate({'height':'150px'},300);
+	}).mouseleave(function(){
+		$(this).find('.info').stop().animate({'height':'110px'},300);
+	})
 })

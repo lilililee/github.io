@@ -2286,6 +2286,7 @@ Anything.prototype.stop = function(flag1 , flag2){
 			}
 		}
 	}
+	return this;
 }
 
 

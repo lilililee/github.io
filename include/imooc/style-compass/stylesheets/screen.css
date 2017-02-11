@@ -203,8 +203,8 @@ body {
   width: 225px;
   text-indent: 30px;
   padding-top: 6px;
-  background: rgba(0, 0, 0, 0.3);
-  -pie-background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  -pie-background: rgba(0, 0, 0, 0.2);
   /*IE6-8*/
   behavior: url(style-compass/sass/PIE.htc);
   -moz-user-select: -moz-none;
@@ -218,30 +218,30 @@ body {
   background-image: url(about:blank);
   line-height: 63px;
 }
-/* line 137, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .nav .left-nav li a {
   color: white;
   display: block;
   height: 63px;
 }
-/* line 144, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .nav .left-nav li:hover {
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 150, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 .nav .left-nav li i {
   float: right;
   margin-right: 30px;
   color: #919090;
 }
-/* line 157, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 .nav .left-nav hr {
   width: 80%;
   border: none;
-  border-top: 1px solid #666666;
+  border-top: 1px solid #A39F9F;
   margin: 0 auto;
 }
-/* line 165, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 .nav .left-nav-menu {
   position: absolute;
   left: 225px;
@@ -253,27 +253,27 @@ body {
   border-bottom: 1px solid #DCD8D8;
   border-right: 1px solid #E4DDDD;
 }
-/* line 179, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .nav .left-nav-menu h3 {
   font-weight: bold;
   margin: 35px 0 10px 35px;
 }
-/* line 184, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .nav .left-nav-menu p {
   font-size: 14px;
   line-height: 35px;
   text-indent: 35px;
 }
-/* line 190, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 .nav .left-nav-menu strong {
   color: #495056;
   font-weight: bold;
 }
-/* line 195, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .nav .left-nav-menu a:hover {
   color: red;
 }
-/* line 200, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 .nav .toggle-left, .nav .toggle-right {
   position: absolute;
   top: 190px;
@@ -289,27 +289,27 @@ body {
   user-select: none;
   font-size: 24px;
 }
-/* line 214, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .nav .toggle-left:hover, .nav .toggle-right:hover {
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 219, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 .nav .toggle-left {
   left: 250px;
   font-size: 25px;
 }
-/* line 223, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .nav .toggle-right {
   left: 1135px;
 }
-/* line 227, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 .nav .toggle-btn {
   position: absolute;
   left: 1020px;
   top: 410px;
   z-index: 1000\0;
 }
-/* line 233, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .nav .toggle-btn span {
   display: inline-block;
   vertical-align: middle;
@@ -326,25 +326,24 @@ body {
   behavior: url(style-compass/sass/PIE.htc);
   cursor: pointer;
 }
-/* line 247, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .nav .toggle-btn .btn-active {
   background-color: #fff;
 }
 
 /* 3. courses */
-/* line 255, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .courses {
   position: relative;
   width: 1200px;
   margin: 0 auto;
   color: #07111b;
 }
-/* line 262, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 .courses .title {
-  border: 1px solid red;
   margin: 40px 0 20px 0;
 }
-/* line 265, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .courses .title h2 {
   display: inline-block;
   vertical-align: middle;
@@ -352,22 +351,22 @@ body {
   *zoom: 1;
   *display: inline;
 }
-/* line 271, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .courses .title a {
   margin-left: 1090px;
   color: #3A3939;
   font-size: 14px;
 }
-/* line 275, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 .courses .title a:hover {
   color: #93999f;
 }
-/* line 281, ../sass/screen.scss */
+/* line 282, ../sass/screen.scss */
 .courses img {
   height: 124px;
   width: 100%;
 }
-/* line 285, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 .courses li {
   position: relative;
   display: inline-block;
@@ -379,58 +378,84 @@ body {
   height: 173px;
   margin-left: 14px;
   font-size: 12px;
+  cursor: pointer;
   -webkit-box-shadow: 0 2px 10px #BCB4B4;
   -moz-box-shadow: 0 2px 10px #BCB4B4;
   box-shadow: 0 2px 10px #BCB4B4;
+  background: white\9;
+  margin-left: 12px\9;
+  behavior: url(style-compass/sass/PIE.htc);
 }
-/* line 300, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
+.courses li:hover {
+  -webkit-box-shadow: 0 2px 20px #9F9B9B;
+  -moz-box-shadow: 0 2px 20px #9F9B9B;
+  box-shadow: 0 2px 20px #9F9B9B;
+}
+/* line 309, ../sass/screen.scss */
 .courses li:first-child {
   margin-left: 0;
 }
-/* line 305, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 .courses .info {
   position: absolute;
   width: 224px;
+  height: 110px;
   bottom: 0;
 }
-/* line 313, ../sass/screen.scss */
+/* line 329, ../sass/screen.scss */
 .courses .info h3 {
-  line-height: 21px;
+  line-height: 20px;
   font-size: 14px;
   padding: 16px 16px 5px 16px;
 }
-/* line 319, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .courses .info p {
   padding: 0 16px;
   color: #93999f;
   line-height: 21px;
 }
-/* line 326, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .courses .info .price {
   color: red;
   padding-left: 16px;
   line-height: 30px;
 }
-/* line 333, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .courses .info .count {
   float: right;
   padding-right: 20px;
   color: #93999f;
   line-height: 30px;
 }
-/* line 341, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .courses .info .intro {
-  height: 60px;
+  height: 100px;
   overflow: hidden;
+  position: absolute;
   background: white;
   /*如果不支持gradient则使用背景图片，IE9不支持*/
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.93)), to(white));
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.93), white);
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.93), white);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.93), #ffffff);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.96)), to(white));
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.96), white);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.96), white);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96), #ffffff);
 }
-/* line 353, ../sass/screen.scss */
+/* line 371, ../sass/screen.scss */
 .courses .info .other {
+  position: absolute;
+  bottom: 0;
   padding: 10px 0;
+  width: 100%;
   background: white;
+}
+/* line 382, ../sass/screen.scss */
+.courses .courses2 i {
+  background: #93999f;
+  color: white;
+  padding: 0 2px;
+}
+/* line 388, ../sass/screen.scss */
+.courses .courses2 .count {
+  float: left;
+  padding-left: 16px;
 }
