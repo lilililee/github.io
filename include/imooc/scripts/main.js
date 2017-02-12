@@ -54,16 +54,19 @@ $(function(){
 	//2.4 定时切换背景
 	var toggle_intervar = setInterval(function(){
 			toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
-		},3000);
+		},5000);
 
 	$('.nav').mouseenter(function(){
 		clearInterval(toggle_intervar);
 	}).mouseleave(function(){
 		toggle_intervar = setInterval(function(){
 			toggleNavBac(cur_bac_index === nav_bacs_length-1? 0 : cur_bac_index+1);
-		},3000);
+		},5000);
 	});
 
+	// $(window).focus(function(){
+	// 	alert(11)
+	// })
 	//切换背景，参数为下一背景下标
 	function toggleNavBac(next_index){
 		last_bac_index = cur_bac_index;			
@@ -72,8 +75,8 @@ $(function(){
 		toggle_btns[cur_bac_index].className = 'btn-active';
 		toggle_btns[last_bac_index].className = '';
 		//淡入淡出背景
-		$(nav_bacs[cur_bac_index]).fadeIn(500);
-		$(nav_bacs[last_bac_index]).fadeOut(500);
+		$(nav_bacs[cur_bac_index]).stop().fadeIn(500);
+		$(nav_bacs[last_bac_index]).stop().fadeOut(500);
 	}
 	/* 3. courses */
 	//3.1 鼠标进入某一课程显示更多信息
