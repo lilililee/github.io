@@ -77,9 +77,14 @@ $(function(){
 	}
 	/* 3. courses */
 	//3.1 鼠标进入某一课程显示更多信息
-	$('.courses-list li').mouseenter(function(){
-		$(this).find('.info').stop().animate({'height':'150px'},300);
+	// $('.courses-list li').mouseenter(function(){
+	// 	$(this).find('.info').stop().animate({'height':'150px'},300);
+	// }).mouseleave(function(){
+	// 	$(this).find('.info').stop().animate({'height':'110px'},300);
+	// })
+	$('.courses-list .info').mouseenter(function(){
+		$(this).stop().animate({'height':'150px'},300);
 	}).mouseleave(function(){
-		$(this).find('.info').stop().animate({'height':'110px'},300);
+		$(this).stop().animate({'height':'110px'},300);
 	})
 })

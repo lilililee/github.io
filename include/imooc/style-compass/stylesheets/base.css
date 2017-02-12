@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* minxin */
 /* iconfont css */
-/* line 29, ../sass/base.scss */
+/* line 30, ../sass/base.scss */
 .iconfont {
   font-family: "iconfont";
   font-size: 16px;
@@ -12,13 +12,14 @@
 }
 
 /* 默认字体 */
-/* line 41, ../sass/base.scss */
+/* line 42, ../sass/base.scss */
 body {
   font-size: 16px;
   font-family: "微软雅黑";
+  color: #07111b;
 }
 
-/* line 46, ../sass/base.scss */
+/* line 48, ../sass/base.scss */
 a {
   color: black;
   text-decoration: none;

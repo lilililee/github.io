@@ -252,7 +252,7 @@ $nav_height: 460px;
 }
 
 /* 3. courses */
-$font_color:#93999f;
+$font_color:#93999f;   //灰色字体
 .courses {
 	position: relative;
 	width: $all_width;
@@ -277,8 +277,15 @@ $font_color:#93999f;
 				color: $font_color;
 			}
 		}	
+	}	
+	li:first-child {
+		margin-left: 0;
+		// margin-left: 0\9;
 	}
+}
 
+//由于caeer-path也需要该样式，特意调出来
+.courses-list {
 	img {
 		height: 124px;
 		width: 100%;
@@ -306,30 +313,22 @@ $font_color:#93999f;
 
 		}
 	}
-	li:first-child {
-		margin-left: 0;
-		// margin-left: 0\9;
-	}
 
 	.info {
 		position: absolute;
-		// vertical-align: bottom;
 		width: 224px;
 		height: 110px;
 		bottom: 0;
-		// -webkit-transition: height 0.4s linear;
-		// -moz-transition: height 0.4s linear;
-		// transition: height 0.4s linear;
-		
-		// &:hover{
-		// 	height: 150px;
-		// }
-		// @include border;
-
+			background: white;	/*如果不支持gradient则使用背景图片，IE9不支持*/
+			background:-webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.95)), to(rgba(255,255,255,1)));
+			background:-moz-linear-gradient(top, rgba(255,255,255,0.95), rgba(255,255,255,1));
+			background:-ms-linear-gradient(top, rgba(255,255,255,0.95), rgba(255,255,255,1));
+			background:linear-gradient(top, rgba(255,255,255,0.95), rgba(255,255,255,1));
 		h3 {
 			line-height: 20px;
 			font-size: 14px;
 			padding: 16px 16px 5px 16px;
+			color: #07111b;
 		}
 
 		p{
@@ -342,15 +341,14 @@ $font_color:#93999f;
 
 		.price {
 			color: red;
-			// font-size: 12px;
-			padding-left: 16px;
+			padding: 0 60px 0 16px;
 			line-height: 30px;
 		}
 		
-		.count{
-			// font-size: 12px;
-			float: right;
-			padding-right: 20px;
+		.count{		
+			// float: right;
+			// padding-right: 20px;
+			padding-left: 16px;
 			color: $font_color;
 			line-height: 30px;
 		}
@@ -359,12 +357,12 @@ $font_color:#93999f;
 			height: 100px;
 			overflow: hidden;
 			position: absolute;
-			// top: 100;
-			background: white;	/*如果不支持gradient则使用背景图片，IE9不支持*/
-			background:-webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.96)), to(rgba(255,255,255,1)));
-			background:-moz-linear-gradient(top, rgba(255,255,255,0.96), rgba(255,255,255,1));
-			background:-ms-linear-gradient(top, rgba(255,255,255,0.96), rgba(255,255,255,1));
-			background:linear-gradient(top, rgba(255,255,255,0.96), rgba(255,255,255,1));
+			
+			// background: white;	/*如果不支持gradient则使用背景图片，IE9不支持*/
+			// background:-webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.96)), to(rgba(255,255,255,1)));
+			// background:-moz-linear-gradient(top, rgba(255,255,255,0.96), rgba(255,255,255,1));
+			// background:-ms-linear-gradient(top, rgba(255,255,255,0.96), rgba(255,255,255,1));
+			// background:linear-gradient(top, rgba(255,255,255,0.96), rgba(255,255,255,1));
 			
 		}
 
@@ -375,19 +373,146 @@ $font_color:#93999f;
 			width: 100%;
 			background: white;
 		}
-
-	}
-
-	.courses2 {
+		
 		i {
 			background:#93999f;
 			color: white;
 			padding: 0 2px;
 			
 		}
-		.count {
-			float: left;
-			padding-left: 16px;
+	}
+}
+/* 4. career-path */
+.career-path-wrap {
+	width: 100%;
+	background: #f3f5f7;
+	margin-top: 50px;
+	padding-top: 40px;
+}
+
+.career-path {
+	width: $all_width;
+	margin: 0 auto;
+	color: white;
+	// @include border;
+	// web-front部分
+	.web-front {
+		position: relative;
+		height: 364px;
+		//vertical-align: top;
+		// @include border;
+	}
+	.web-title {
+		display: inline-block;
+		width: 184px;
+		height: 304px;	
+		padding: 30px 20px;
+		h2 {
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		.title-link1 {
+			display: block;
+			color: white;
+			margin-top: 50px;
+		}
+
+		.title-link2 {
+			width: 190px;
+			margin-top: 100px;
+			font-size: 12px;
+			line-height: 30px;
+			a {
+				color: #cc0033;
+				&:hover{
+					color: red;
+				}
+			}
 		}
 	}
+	
+	.web-course1 {
+		display: inline-block;
+		position: relative;
+		top: -50px;
+		left: 15px;
+		// @include border;
+		li {
+			width: 468px;
+			height: 172px;
+			line-height: 172px;
+			text-align: center;
+		}
+
+		li:first-child {
+			margin-bottom: 20px;
+		}
+
+		a {
+			display: block;
+			width: 100%;
+			height: 1000;
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+			
+		}
+	}
+
+	.web-course2 {
+		display: inline-block;
+		position: relative;
+		top: -20px;
+		left: 15px;
+		// @include border;
+		li {
+			display: block;
+			// @include border;
+			height: 171px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.web-course3 {
+		display: inline-block;
+		position: relative;
+		top: -150px;
+		left: 14px;
+
+		li {
+			height: 362px;
+			background: white;
+			.info {
+				bottom: 191px;
+			}
+		}
+
+		
+		
+		// @include border;
+		.web-bottom-link{
+			margin-top: 50px;
+			hr {
+				width: 80%;
+				//border-color: white;
+				border-top: 1px solid #DED5D5;
+			}
+
+			div {
+				margin: 20px;
+				
+
+			}
+
+			a {
+				color: $black_font;
+
+				&:hover {
+					color: red;
+				}
+			}
+		}
+	}
+	
 }

@@ -11,7 +11,8 @@
 	border: $width solid $color;
 }
 
-// @mixin inline_block(){
+$black_font: #07111b;
+// @mixin inline_block(){		//compass默认有
 // 	display: inline-block;
 // 	*display: inline;
 // 	*zoom: 1;
@@ -42,6 +43,7 @@ body {
 	// font: 10px/1.5 '宋体' arial sans-serif;
 	font-size: 16px;
 	font-family:  "微软雅黑";
+	color: #07111b;
 }
 a {
 	color: black;
