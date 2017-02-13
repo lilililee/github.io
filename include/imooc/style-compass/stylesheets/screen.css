@@ -807,28 +807,29 @@ body {
   position: absolute;
   bottom: 0;
   right: 62px;
+  z-index: 2000;
   background: white;
   -webkit-box-shadow: 0 0 3px #E4DCDC;
   -moz-box-shadow: 0 0 3px #E4DCDC;
   box-shadow: 0 0 3px #E4DCDC;
   behavior: url(style-compass/sass/PIE.htc);
 }
-/* line 787, ../sass/screen.scss */
+/* line 788, ../sass/screen.scss */
 .fixed-menu .fixed-app p, .fixed-menu .fixed-weixin p {
   font-size: 12px;
   line-height: 16px;
 }
-/* line 793, ../sass/screen.scss */
+/* line 794, ../sass/screen.scss */
 .fixed-menu .fixed-app p:first-child, .fixed-menu .fixed-weixin p:first-child {
   margin-top: 10px;
 }
-/* line 798, ../sass/screen.scss */
+/* line 799, ../sass/screen.scss */
 .fixed-menu .fixed-showtotop {
   display: none;
 }
 
 /* 7. update-info */
-/* line 804, ../sass/screen.scss */
+/* line 805, ../sass/screen.scss */
 .update-info {
   display: none;
   position: fixed;
@@ -841,18 +842,18 @@ body {
   text-align: center;
   background: #FAE8EF;
 }
-/* line 816, ../sass/screen.scss */
+/* line 817, ../sass/screen.scss */
 .update-info a {
   color: #25DF83;
 }
-/* line 820, ../sass/screen.scss */
+/* line 821, ../sass/screen.scss */
 .update-info i {
   float: right;
   margin-right: 20px;
   line-height: 33px;
   cursor: pointer;
 }
-/* line 826, ../sass/screen.scss */
+/* line 827, ../sass/screen.scss */
 .update-info i:hover {
   color: red;
 }
