@@ -122,4 +122,6 @@ $(function(){
 		//alert(11)
 		$(window).animate({'scrollTop': '0'},400);
 	})
+
+	
 })

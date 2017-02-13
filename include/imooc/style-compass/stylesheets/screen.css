@@ -826,3 +826,33 @@ body {
 .fixed-menu .fixed-showtotop {
   display: none;
 }
+
+/* 7. update-info */
+/* line 804, ../sass/screen.scss */
+.update-info {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  text-align: center;
+  background: #FAE8EF;
+}
+/* line 816, ../sass/screen.scss */
+.update-info a {
+  color: #25DF83;
+}
+/* line 820, ../sass/screen.scss */
+.update-info i {
+  float: right;
+  margin-right: 20px;
+  line-height: 33px;
+  cursor: pointer;
+}
+/* line 826, ../sass/screen.scss */
+.update-info i:hover {
+  color: red;
+}
