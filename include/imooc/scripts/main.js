@@ -80,14 +80,46 @@ $(function(){
 	}
 	/* 3. courses */
 	//3.1 鼠标进入某一课程显示更多信息
-	// $('.courses-list li').mouseenter(function(){
-	// 	$(this).find('.info').stop().animate({'height':'150px'},300);
-	// }).mouseleave(function(){
-	// 	$(this).find('.info').stop().animate({'height':'110px'},300);
-	// })
 	$('.courses-list .info').mouseenter(function(){
 		$(this).stop().animate({'height':'150px'},300);
 	}).mouseleave(function(){
 		$(this).stop().animate({'height':'110px'},300);
+	})
+
+	/* 4. 右侧固定菜单栏 */
+	// 4.1 将图标改为文字
+	$('.fixed-menu a').mouseover(function(){
+		$(this).find('i').css('display','none');
+		$(this).find('span').css('display','block');
+	}).mouseout(function(){
+		$(this).find('i').css('display','inline');
+		$(this).find('span').css('display','none');
+	})
+
+	//4.2 显示app下载二维码
+	$('.fixed-showapp').mouseenter(function(){
+		$('.fixed-app').show(200);
+	}).mouseleave(function(){
+		$('.fixed-app').hide(200);
+	});
+	$('.fixed-showweixin').mouseenter(function(){
+		$('.fixed-weixin').show(200);
+	}).mouseleave(function(){
+		$('.fixed-weixin').hide(200);
+	});
+
+	//4.3 显示返回顶部按钮
+	$(window).scroll(function(){
+		if($(window).scrollTop() > 400){
+			$('.fixed-showtotop').fadeIn();
+		} else {
+			$('.fixed-showtotop').fadeOut();
+		}
+	});
+
+	//4.4 点击返回顶部
+	$('.fixed-totop').click(function(){
+		//alert(11)
+		$(window).animate({'scrollTop': '0'},400);
 	})
 })
