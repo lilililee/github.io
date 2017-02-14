@@ -388,7 +388,8 @@ $font_color:#93999f;   //灰色字体
 }
 /* 4. career-path */
 .career-path-wrap {
-	width: 100%;
+	// width: 100%;
+	min-width: 1200px;
 	background: #f3f5f7;
 	margin-top: 50px;
 	padding-top: 40px;
@@ -676,10 +677,11 @@ $font_color:#93999f;   //灰色字体
 
 /* 5. footer */
 .footer {
+	min-width: 1200px;
 	padding-top: 20px;
 	background: #fff;
 	text-align: center;
-
+	
 	.link-icon {
 		li {
 			display: inline-block;
@@ -726,8 +728,8 @@ $font_color:#93999f;   //灰色字体
 /* 6. fixed-menu */
 .fixed-menu {
 	position: fixed;
-	//bottom: 100px;
-	top: 250px;
+	bottom: 100px;
+	// top: 250px;
 	right: 0;
 	width: 60px;
 	padding: 10px 0;
