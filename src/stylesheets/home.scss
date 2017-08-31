@@ -1,0 +1,66 @@
+@import "./lib/common.scss";
+
+canvas {
+	width: 100%!important;
+	height: 100%!important;
+	display: block;
+}
+
+
+
+
+.main-container {
+	
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #fff;
+	user-select: none;
+}
+
+.main {
+	img {
+		width: 170px;
+		transition: all 2s ease;
+
+		&:hover {
+			transform: rotateY(360deg)
+		}
+
+	}
+
+	h1 {
+		font-size: 30px;
+		margin: 20px;
+
+	}
+
+	p {
+		font-size: 22px;
+		
+	}
+
+	ul {
+		margin-top: 20px;
+		font-size: 16px;
+
+		li {
+			margin-top: 14px;
+
+		}
+
+		a {
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
