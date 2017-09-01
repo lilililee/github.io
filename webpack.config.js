@@ -1,10 +1,12 @@
-let path = require('path');
-let CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
 		verdor: ['jQuery'],
-		home: './src/javascripts/home.js'
+		home: './src/javascripts/home.js',
+		home2: './src/javascripts/home2.js'
 	},
 
 	output: {
@@ -22,10 +24,19 @@ module.exports = {
 					presets: ['env']
 				}
 			},
+			// {
+			// 	test: /\.scss$/,
+			// 	loader: 'style-loader!css-loader!postcss-loader!sass-loader'
+			// }
 			{
 				test: /\.scss$/,
-				loader: 'style-loader!css-loader!sass-loader'
+		        use: ExtractTextPlugin.extract({
+		          fallback: 'style-loader',
+		          //resolve-url-loader may be chained before sass-loader if necessary
+		          use: ['css-loader', 'postcss-loader', 'sass-loader']
+		        })
 			}
+
 		]
 	},
 
@@ -36,7 +47,8 @@ module.exports = {
 			verbose: true,
 			dry: false,
 			exclude: []
-		})
+		}),
+		new ExtractTextPlugin('./stylesheets/style.css')
 
 	]
 
