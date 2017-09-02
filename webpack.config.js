@@ -19,7 +19,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				exclude: /node_modules/,		// 绝对路径或正则匹配
+				exclude: /node_modules/,		// 绝对路径或正则匹配，可减少打包时间
 				query: {
 					presets: ['env']
 				}
@@ -38,6 +38,11 @@ module.exports = {
 			}
 
 		]
+	},
+	devServer: {
+	    contentBase: __dirname,//本地服务器所加载的页面所在的目录
+	    historyApiFallback: true,//不跳转
+	    inline: true//实时刷新
 	},
 
 
