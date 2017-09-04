@@ -1,2 +1,2 @@
 # github.io
-(Personal homepage)[https://lilililee.github.io/index.html]
+[Personal homepage](https://lilililee.github.io/index.html)
