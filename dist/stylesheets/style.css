@@ -135,3 +135,11 @@ canvas {
     margin-top: 14px; }
   .main ul a:hover {
     text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .main img {
+    width: 112px; }
+  .main h1 {
+    font-size: 28px; }
+  .main p {
+    font-size: 20px; } }

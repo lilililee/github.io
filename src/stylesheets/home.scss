@@ -28,6 +28,7 @@ canvas {
 
 	color: #fff;
 	user-select: none;
+
 }
 
 .main {
@@ -66,6 +67,20 @@ canvas {
 			&:hover {
 				text-decoration: underline;
 			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		img {
+			width: 112px;
+		}
+
+		h1 {
+			font-size: 28px;
+		}
+
+		p {
+			font-size: 20px;
 		}
 	}
 }

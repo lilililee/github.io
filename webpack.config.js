@@ -5,8 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 	entry: {
 		verdor: ['jQuery'],
-		home: './src/javascripts/home.js',
-		home2: './src/javascripts/home2.js'
+		home: './src/javascripts/home.js'
+		
 	},
 
 	output: {
